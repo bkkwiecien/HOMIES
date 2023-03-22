@@ -1,0 +1,32 @@
+{% load static %}
+
+<header>
+    <div class="header__logo">
+        <a href="{% url 'home' %}">
+            <img class="header__photo" src="{% static 'media/logo.jpeg' %}" alt="HOMIES">
+        </a>
+    </div>
+<!--    if login-->
+    <div class="header__user">
+        <img class="header__user_photo" src="{% static data.user_photo %}" alt="">
+        <div class="header__username">
+            <div>
+                <p class="header__user_p">{{data.user_first_name}} {{data.user_second_name}}</p>
+                <a href="{% url 'logout' %}">
+                    <div class="header_logout_button">
+                        <p class="header__user_logout">logout</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+<!--    else-->
+<!--    <div class="header__user">-->
+<!--        <img class="header__user_photo" src="{% static 'media/profile-user.png' %}" alt="">-->
+<!--        <div class="header__username">-->
+<!--            <a href="{% url 'login' %}">login</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    endif-->
+
+</header>

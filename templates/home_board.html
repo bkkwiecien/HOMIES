@@ -1,0 +1,41 @@
+{% extends "./main.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+    .description-profile{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    .founder-description{
+        color: var(--color4);
+        margin: 10px;
+        margin-top: 15px;
+        letter-spacing: 1px;
+    }
+</style>
+<div class="content-blocks">
+    <div class="vertical-content-block" style="width: 400px; height: 600px;">
+        <div class="next-classes">
+            <img src="https://cryptologos.cc/logos/cosmos-atom-logo.png" class="description-profile" alt="">
+            <h1 id="next-classes-text" style="text-align: center;">
+                HOMIES
+            </h1>
+            <hr>
+            <p class="founder-description">Concept and idea made by the man on the right. It is intended to help students in Poland and around the world learn school topics and issues on their own, under the watchful eye of artificial intelligence. Appropriate neural networks recognize the type of material and the most effective way of presenting it. And then they adapt the material to the student so that he always understands the issue as best as possible in the shortest possible time.</p>
+        </div>
+    </div>
+    <div class="vertical-content-block" style="width: 400px; height: 600px;">
+        <div class="next-classes">
+            <img src="{% static 'media/profile-description.png' %}" class="description-profile" alt="">
+            <h1 id="next-classes-text" style="text-align: center;">
+                Bartosz Kwiecień
+            </h1>
+            <hr>
+            <p class="founder-description">Fascinated by programming and code since childhood, a liberal student looking for new => more effective methods of learning. Bartosz Kwiecień is the creator and CEO of HomiesAI, but technically it is not a company yet, so I cannot call myself CEO . I am one men crew and I wrote the whole platform myself based on Django technology, using python, js, html, css, jinja languages.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

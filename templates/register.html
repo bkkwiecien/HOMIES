@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+    <div class="a-button">
+        <p id="register-text">Already registered ?
+            <a id="register-link" href="{% url 'sign-in' %}">SIGN IN</a>
+        </p>
+    </div>
+
+    <video autoplay muted loop id="background-video">
+        <source src="{% static 'media/background.mp4' %}" type="video/mp4">
+    </video>
+
+    <div class="side-container">
+        <form action="" method="POST" class="register-form">
+            {% csrf_token %}
+            <div class="vertical-center-container" id="left-vertical-center-container">
+                <div class="horizontal-center-container">
+                    <img id="login-logo" src="{% static 'media/logo.jpg' %}" alt="HOMIES">
+                </div>
+
+                <div class="horizontal-center-container">
+                    <img id="registerUserPhoto" src="/static/media/user.png" alt="">
+                </div>
+
+                <div class="horizontal-center-container">
+                    <div class="group">
+                        <input id="imgInp" type="file" value="Profile Photo" name="imgInp" />
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+<!--                        <label>Profile Photo</label>-->
+                      </div>
+                </div>
+                <script>
+                    imgInp.onchange = evt => {
+                      const [file] = imgInp.files
+                      if (file) {
+                        registerUserPhoto.src = URL.createObjectURL(file)
+                      }
+                    }
+                </script>
+
+            </div>
+
+            <div class="vertical-center-container">
+
+                <div class="horizontal-center-container less-bottom-margin">
+                    <div class="group">
+                        <input type="text" required name="first_name" />
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>First Name</label>
+                      </div>
+                </div>
+
+                <div class="horizontal-center-container less-bottom-margin">
+                    <div class="group">
+                        <input type="text" required name="second_name" />
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Second Name</label>
+                      </div>
+                </div>
+
+                <div class="horizontal-center-container less-bottom-margin">
+                    <div class="group">
+                        <input type="text" required name="username" />
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Username</label>
+                      </div>
+                </div>
+
+                <div class="horizontal-center-container less-bottom-margin">
+                    <div class="group">
+                        <input type="email" required name="email" />
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Email</label>
+                      </div>
+                </div>
+
+                <div class="horizontal-center-container less-bottom-margin">
+                    <div class="group">
+                        <input type="password" required name="password1" />
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>
+                      </div>
+                </div>
+
+<!--                <div class="horizontal-center-container less-bottom-margin">-->
+<!--                    <div class="group">-->
+<!--                        <input type="password" required name="password2" />-->
+<!--                        <span class="highlight"></span>-->
+<!--                        <span class="bar"></span>-->
+<!--                        <label>Confirm Password</label>-->
+<!--                      </div>-->
+<!--                </div>-->
+
+                <div class="horizontal-center-container">
+                    <input type="submit" class="login-button" id="register-button" value="REGISTER"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+* {
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    color: inherit;
+    font-size: inherit;
+}
+
+div {
+    display: block;
+}
+body {
+    line-height: 1.6;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--color-light-gray);
+    background-color: var(--color-bg);
+    min-height: 100vh;
+}
+:root {
+    --color-main: #71c6dd;
+    --color-main-light: #e1f6fb;
+    --color-dark: #3f4156;
+    --color-dark-medium: #51546e;
+    --color-dark-light: #696d97;
+    --color-light: #e5e5e5;
+    --color-gray: #8b8b8b;
+    --color-light-gray: #b2bdbd;
+    --color-bg: #2d2d39;
+    --color-success: #5dd693;
+    --color-error: #fc4b0b;
+}
+html {
+    font-size: 56.25%;
+}
+
+.layout__box {
+    width: 90%;
+    max-width: 48rem;
+    min-height: 40rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -46%);
+    background-color: var(--color-dark);
+    border-radius: 1rem;
+    box-shadow: 1px 1px 6px 3px rgb(0 0 0 / 10%);
+    overflow: hidden;
+}
+
+.auth .layout__boxHeader {
+    text-align: center;
+    justify-content: center;
+}
+.layout__boxHeader {
+    display: flex;
+    padding: 1.5rem;
+    background-color: var(--color-dark-light);
+}
+
+.layout__body {
+    margin: 3rem;
+}
+
+.auth__tagline {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-main);
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+.form__group label {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form__group {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.form__group input, .form__group textarea, .form__group select {
+    background: transparent;
+    border: 1px solid var(--color-dark-light);
+    padding: 1rem;
+    border-radius: 3px;
+    width: 100%;
+    color: var(--color-light);
+    font-weight: 500;
+    outline: none;
+}
+
+.btn--main {
+    background-color: #71c6dd;
+    color: #71c6dd;
+}
+.btn {
+    background-color: transparent;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 15%);
+    font-weight: 500;
+}
+
+.auth__action {
+    margin-top: 3rem;
+    text-align: center;
+}

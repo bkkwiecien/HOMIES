@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+    <div class="a-button">
+        <p id="register-text">Don't have an account ?
+            <a id="register-link" href="{% url 'sign-up' %}">SIGN UP</a>
+        </p>
+    </div>
+
+    <video autoplay muted loop id="background-video">
+        <source src="{% static 'media/background.mp4' %}" type="video/mp4">
+    </video>
+
+    <div class="side-container">
+        <form action="" method="POST" class="login-form">
+            {% csrf_token %}
+            <div class="vertical-center-container">
+                <div class="horizontal-center-container-login">
+                    <img id="login-logo" src="{% static 'media/logo.jpg' %}" alt="HOMIES">
+                </div>
+
+                <div class="horizontal-center-container-login">
+                    <div class="group">
+                        <input type="text" required name="email" id="email" />
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Email</label>
+                      </div>
+                </div>
+
+                <div class="horizontal-center-container-login">
+                    <div class="group">
+                        <input type="password" required name="password" id="password" />
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>
+                      </div>
+                </div>
+
+                <div class="horizontal-center-container-login">
+                    <a id="forgot-password" href="">forgot password?</a>
+                </div>
+
+                <div class="horizontal-center-container-login">
+                    <input type="submit" class="login-button" value="LOGIN"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

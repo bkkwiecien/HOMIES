@@ -1,0 +1,66 @@
+{% extends "./main.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content-blocks">
+    <div class="left-content-blocks">
+        <div class="horizontal-content-block">
+            <div class="last-lesson-container">
+                <div class="last-lesson-left">
+                    <div id="last-lesson-text-div">
+                        <p class="last-lesson-text">Current Lesson:</p>
+                        <div id="just-a-div-to-colors">
+                            <h1 class="last-lesson-text" id="last-lesson-text-index">{{ hover_class.class_content.previous_lesson.lesson_number }}</h1>
+                            <h1 class="last-lesson-text" id="last-lesson-text">{{ hover_class.class_content.previous_lesson.lesson_name }}</h1>
+                        </div>
+                        <p class="last-lesson-text lesson_description" id="previous-lesson-description">{{ hover_class.class_content.previous_lesson.lesson_description }}</p>
+                    </div>
+                    <div id="div-with-progress-bar">
+                        <div class="progress-bar" style="--width: 0" data-label="{{ hover_class.class_content.previous_lesson.progres }}%DONE"></div>
+                    </div>
+                    <script>
+                        const progressBar = document.getElementsByClassName('progress-bar')[0];
+                        const fill = {{ hover_class.class_content.previous_lesson.progres }}
+                        setInterval(() => {
+                            const computedStyle = getComputedStyle(progressBar)
+                            const width = parseFloat(computedStyle.getPropertyValue('--width')) || 0
+                            if (width < fill) {
+                                progressBar.style.setProperty('--width', width+ .1)
+                            }
+                        }, 5)
+                    </script>
+                </div>
+
+                <div class="last-lesson-right">
+                    <button class="youtube-button" id="last-lesson-yt-button">
+                        <img id="yt-arrow" src="{% static './media/yt-arrow.png' %}" alt="GO">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="horizontal-content-block">
+             <img id="math-meme" src="{{ hover_class.class_gif }}" alt="MATH MEME">
+        </div>
+
+    </div>
+    <div class="vertical-content-block">
+        <div class="next-classes">
+            <h1 id="next-classes-text">
+                Next Lessons:
+            </h1>
+            {% for next in hover_class.class_content.lessons %}
+                <section class="next-class">
+                    <div class="next-lesson-text-div">
+                        <h1 class="next-lesson-text next-lesson-text-index" style="margin-bottom: 0px;">Lesson {{ next.lesson_number }}:</h1>
+                        <h1 class="next-lesson-text" id="next-lesson-text">{{ next.lesson_name }}</h1>
+                    </div>
+                    <button class="youtube-button next-lesson-button">
+                        <img class="nxt-arrow" src="{% static './media/yt-arrow.png' %}" alt="GO">
+                    </button>
+                </section>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

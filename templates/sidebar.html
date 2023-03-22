@@ -1,0 +1,49 @@
+{% load static %}
+<div id="center-sidebar">
+    <div class="sidebar">
+<!--        <div class="header__user">-->
+<!--            <div id="header__user_photo_div">-->
+<!--                <img class="header__user_photo" src="{% static user.avatar.url %}" alt="">-->
+<!--            </div>-->
+<!--            <div class="header__username">-->
+<!--                <div>-->
+<!--                    <div class="logout-link">-->
+<!--                        <p class="header__user_p">{{user.first_name}} {{user.second_name}}</p>-->
+<!--                    </div>-->
+<!--                    <div class="logout-link">-->
+<!--                        <a class="header_logout_button" href="{% url 'logout' %}">-->
+<!--                            <div id="header_logout_button">-->
+<!--                                <p class="header__user_logout">LOGOUT</p>-->
+<!--                            </div>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="separator-wraper">-->
+<!--            <div class="separator">-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="courses">
+            {% for class in data.classes %}
+            <a href="{% url 'course' class.class_name %}" style="text-decoration:none;">
+                <section class="course">
+                    <div class="course-in-section">
+                        <img class="course-icon" src="{% static class.class_icon %}">
+                        <p class="course-text">{{ class.class_name }}</p>
+                    </div>
+                </section>
+            </a>
+            {% endfor %}
+        </div>
+        <a href="/add" style="text-decoration:none;">
+            <section class="course" id="add-course">
+                <div class="course-in-section" id="add-more">
+                    <img class="course-icon" id="add-course-img" src="{% static './media/add.svg' %}">
+                    <p class="course-text" id="add-course-text">ADD MORE</p>
+                </div>
+            </section>
+        </a>
+
+    </div>
+</div>
