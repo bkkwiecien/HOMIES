@@ -1,8 +1,8 @@
 <h1>HOMIES AI</h1>
 
-<p href="https://homiesai.web.app/">click the photo
-  <img  src="https://media.tenor.com/OrLwhhYkVcIAAAAC/the-office-office.gif">
-</p>
+<img  src="https://media.tenor.com/OrLwhhYkVcIAAAAC/the-office-office.gif">
+
+<h2> HOMIES AI INFINITY 2.0 => https://homiesai.web.app/ </h2>
 
 <p>HOMIES is a web-based platform that aims to revolutionize homeschooling for students of all ages. Our startup is dedicated to creating a more personalized and engaging learning experience for homeschooling students, with a focus on connecting students with a community of peers and experienced educators.</p>
 
